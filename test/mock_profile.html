@@ -60,7 +60,25 @@
     <!-- Script to simulate LinkedIn's delayed rendering SPA approach if needed -->
     <script>
         console.log("Mock LinkedIn profile loaded");
+        // Polyfill chrome API for testing the content script directly
+        window.chrome = {
+            storage: {
+                local: {
+                    set: function (data) {
+                        console.log("MOCK chrome.storage.local.set called with:", JSON.stringify(data, null, 2));
+                        // Append to DOM for easier visibility via Browser Subagent if needed
+                        var el = document.createElement("pre");
+                        el.id = "extracted-data";
+                        el.style.backgroundColor = "#f4f4f4";
+                        el.style.padding = "10px";
+                        el.textContent = "Extracted:\n" + JSON.stringify(data, null, 2);
+                        document.body.appendChild(el);
+                    }
+                }
+            }
+        };
     </script>
+    <script src="../dist/chrome-mv3/content-scripts/linkedin.js"></script>
 </body>
 
 </html>
