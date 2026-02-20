@@ -1,4 +1,4 @@
-import { defineContentScript } from 'wxt/sandbox';
+// WXT provides auto-imports for defineContentScript
 
 export default defineContentScript({
     matches: ['*://*.linkedin.com/in/*'],

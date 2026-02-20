@@ -12,7 +12,7 @@ const App = () => {
     useEffect(() => {
         // Fetch stored profile from Content Script
         if (typeof chrome !== 'undefined' && chrome.storage) {
-            chrome.storage.local.get(['linkedinProfile'], async (result) => {
+            chrome.storage.local.get(['linkedinProfile'], async (result: any) => {
                 if (result.linkedinProfile) {
                     setProfile(result.linkedinProfile);
 

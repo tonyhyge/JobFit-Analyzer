@@ -1,4 +1,5 @@
 import { defineConfig } from 'wxt';
+import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
@@ -13,6 +14,6 @@ export default defineConfig({
         action: {}
     },
     vite: () => ({
-        plugins: [tailwindcss()],
+        plugins: [react(), tailwindcss()],
     }),
 });
