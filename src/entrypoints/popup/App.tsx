@@ -108,7 +108,7 @@ const App = () => {
                         </CardHeader>
                         <CardContent>
                             <div className="flex items-center justify-between mb-2">
-                                <span className="text-sm font-semibold">Overall $S_{'{JF}'}$ Match</span>
+                                <span className="text-sm font-semibold">Overall S<sub>JF</sub> Match</span>
                                 <Badge variant={scoreData.score >= 80 ? 'default' : scoreData.score >= 60 ? 'secondary' : 'destructive'}>
                                     {scoreData.score.toFixed(1)} / 100
                                 </Badge>
