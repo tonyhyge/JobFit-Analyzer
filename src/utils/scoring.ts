@@ -20,6 +20,7 @@ export interface JobFitResult {
     alpha: number;
     beta: number;
     analysis: string;
+    skillBreakdown?: Array<{ skill: string, score: number }>;
 }
 
 /**
